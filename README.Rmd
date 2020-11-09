@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # ForestFires
 
 <!-- badges: start -->
+![R-CMD-check](https://github.com/Widzo1/ForestFires/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of ForestFires is to present data for a particularly challenging regression task of predicting the size of the burned area using various meteorological measurements. 
@@ -32,23 +33,21 @@ install.packages("ForestFires")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-#library(ForestFires)
-## basic example code
+```{r example, message=FALSE}
+library(ForestFires)
+## distribution of observations by month
+library(tidyverse)
+ForestFires%>%
+  group_by(month)%>%
+  summarize(count = n())%>%
+  ggplot(aes(x = month, y = count)) + 
+  geom_col(fill ="#3D9970") +
+  ggtitle("Distribution of Forest Fires by month")
+
+## basic ggpairs for regression preliminary analysis
+library(GGally)
+ggpairs(data = ForestFires, columns = 7:13, title = "Basic scatter plot matrix")
+
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

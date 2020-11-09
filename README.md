@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+![R-CMD-check](https://github.com/Widzo1/ForestFires/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of ForestFires is to present data for a particularly
@@ -25,30 +26,24 @@ install.packages("ForestFires")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-#library(ForestFires)
-## basic example code
+library(ForestFires)
+## distribution of observations by month
+library(tidyverse)
+ForestFires%>%
+  group_by(month)%>%
+  summarize(count = n())%>%
+  ggplot(aes(x = month, y = count)) + 
+  geom_col(fill ="#3D9970") +
+  ggtitle("Distribution of Forest Fires by month")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+
+## basic ggpairs for regression preliminary analysis
+library(GGally)
+ggpairs(data = ForestFires, columns = 7:13, title = "Basic scatter plot matrix")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+<img src="man/figures/README-example-2.png" width="100%" />
