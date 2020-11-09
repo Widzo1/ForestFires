@@ -1,30 +1,31 @@
-#' Discs for Disc Golf
+#' Forest Fires Data
 #'
-#' This package contains specifications for discs approved by
-#' the Professional Disc Golf Association
+#' This package contains data on forest fires from northeastern Portugal
 #' @docType package
-#' @name DiscGolf
-#' @aliases DiscGolf DiscGolf-package
+#' @name ForestFires
+#' @aliases ForestFires ForestFires-package
 NULL
 
-#' "Golf Discs"
+#' "Forest Fires"
 #'
-#' A data set containing golf discs approved by
-#' the Professional Disc Golf Association
-#' as of October, 2020
+#' A data set containing data on recorded forest fires
+#' from the northeast region of Portugal
 #'
-#' @source \url{https://www.pdga.com/introduction}
-#' @format A dataframe with 1260 elements
+#' @source \url{http://www3.dsi.uminho.pt/pcortez/forestfires/}
+#' @format A dataframe with 517 elements
 #' \describe{
-#'   \item{approved_date}{Data the disc was approved}
-#'   \item{class}{Class of disc}
-#'   \item{diameter}{Diameter of disc (in cm)}
-#'   \item{flexibility}{Flexibility of disc (in kg)}
-#'   \item{height}{Height of disc (in cm)}
-#'   \item{manufacturer}{Manufacturer/distributor}
-#'   \item{model}{Disc model}
-#'   \item{rim_depth}{Rim depth (in cm)}
-#'   \item{rim_thickness}{Rim thickness (in cm)}
-#'   \item{weight}{Weight (in gm)}
+#'   \item{X}{x-axis spatial coordinate within the Montesinho park map: 1 to 9}
+#'   \item{Y}{y-axis spatial coordinate within the Montesinho park map: 2 to 9}
+#'   \item{month}{month of the year}
+#'   \item{day}{day of the week}
+#'   \item{FFMC}{FFMC index from the FWI system}
+#'   \item{DMC}{DMC index from the FWI system}
+#'   \item{DC}{DC index from the FWI system}
+#'   \item{ISI}{ISI index from the FWI system}
+#'   \item{temp}{temperature in Celsius degrees}
+#'   \item{RH}{relative humidity in %}
+#'   \item{wind}{wind speed in km/h}
+#'   \item{rain}{outside rain in mm/m2}
+#'   \item{area}{the burned area of the forest (in ha)}
 #' }
-"DiscGolf"
+"ForestFires"
