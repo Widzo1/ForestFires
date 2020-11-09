@@ -1,0 +1,17 @@
+Package: ForestFires
+Title: Data set on forest fires in Portugal
+Version: 0.1.0
+Authors@R: 
+    person(given = "Wilson",
+           family = "Sithole",
+           role = c("aut", "cre"),
+           email = "willsithole81@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: One can use this data set for a difficult regression task, where the aim is to predict the burned area of forest fires, in the northeast region of Portugal, by using meteorological and other data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
